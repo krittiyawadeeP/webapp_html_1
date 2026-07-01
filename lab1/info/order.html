@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <a href="../index.htm">Home</a> <br>
+    <a href="../info/menu.htm">menu</a>
+
+
+    <h2>กรอกรายละเอียดการจัดส่ง</h2>
+    
+    <label for="name">ชื่อ-นามสกุล</label><br>
+    <input type="text" id="name" name="name" size="40" required>
+    <br><br>
+    <label for="phone">เบอร์โทร</label><br>
+    <input type="text" id="phone" name="phone" size="40" required>
+    <br><br>
+
+    <label for="address">ที่อยู่</label><br>
+    <input type="text" id="address" name="address" size="40" required>
+    <br><br>
+
+    <label for="deliveryDate">วันที่จัดส่ง</label><br>
+    <input type="date" id="deliveryDate" name="deliveryDate" required>
+    <br><br>
+
+    <label for="deliveryTime">เวลาจัดส่ง</label><br>
+    <input type="time" id="deliveryTime" name="deliveryTime" required>
+    <br><br>
+    
+
+
+
+<h2>เลือกรายการอาหาร</h2>
+    <form>
+
+<table width="100%" border="0">
+
+<tr>
+    <td>
+        <img src="../img/images.jpg" alt="กระเพราหมูกรอบ" width="80" height="80">
+        <input type="checkbox" id="food1" name="food[]" value="กระเพราหมูกรอบ">
+        <label for="food1">กระเพราหมูกรอบ</label>
+    </td>
+    <td align="right">
+        75 บาท
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        จำนวน
+        <input type="number" name="qty_01" min="1" value="1">
+
+        คำสั่งพิเศษ
+        <textarea name="special_01" rows="2" cols="40"
+        placeholder="เช่น เผ็ดน้อย, ไม่ใส่ถั่วฝักยาว"></textarea>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2"><hr></td>
+</tr>
+
+<tr>
+    <td>
+        <img src="../img/fryrice.jpg" alt="ข้าวผัด" width="80" height="80">
+        <input type="checkbox" id="food2" name="food[]" value="ข้าวผัด">
+        <label for="food2">ข้าวผัด</label>
+    </td>
+    <td align="right">
+        65 บาท
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        จำนวน
+        <input type="number" name="qty_02" min="1" value="1">
+
+        คำสั่งพิเศษ
+        <textarea name="special_02" rows="2" cols="40"
+        placeholder="เช่น ไม่ใส่ต้นหอม"></textarea>
+    </td>
+</tr>
+
+</table>
+
+<br>
+
+<input type="submit" value="ยืนยันการสั่งอาหาร">
+<input type="reset" value="ล้างข้อมูล">
+
+</form>
+</body>
+</html>
