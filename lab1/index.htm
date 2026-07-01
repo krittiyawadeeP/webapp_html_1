@@ -1,19 +1,108 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>คาเฟ่อบอุ่น</title>
-    </head>
-    <body>
-        <h1>คาเฟ่อบอุ่น</h1>
+
+<head>
+    <title>ครัวอิ่มอุ่น :D</title>
+
+    <style>
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 180px;
+            height: 120px;
+        }
+
+        .head {
+            color: rgb(62, 129, 255);
+            font-size: 24;
+        }
+
+        .recommend {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">ครัวอิ่มอุ่น :D</h1>
     <ul>
         <li><a href="index.htm">Home</a></li>
         <li><a href="info/menu.htm">menu</a></li>
-        <!-- <li><a href="products.html">about</a></li> -->
-         <li><a>about</a></li>
-        <li><a href="info/order.html">contract and booking</a></li>
+        <li><a href="index.htm">about us</a></li>
+        <li><a href="info/order.html">order</a></li>
     </ul>
 
-    </body>
+
+    <section>
+        <h2 class="head">เกี่ยวกับร้าน</h2>
+        <p> ร้านอิ่มอร่อยให้บริการอาหารไทยหลากหลายเมนู
+            ใช้วัตถุดิบสดใหม่ สะอาด และปรุงสดทุกจาน
+            พร้อมบริการรับประทานที่ร้านและสั่งกลับบ้าน
+        </p>
+    </section>
+
+
+    <section>
+        <h2 class="head">บรรยากาศและอาหาร</h2>
+
+        <div class="gallery">
+
+            <a href="info/menu.htm">
+                <img src="img/view1.jpg" alt="วิว 1" height="200">
+            </a>
+
+            <a href="info/menu.htm">
+                <img src="img/view2.jpg" alt="วิว 2">
+            </a>
+
+            <a href="info/menu.htm">
+                <img src="img/view3.jpg" alt="วิว 3">
+            </a>
+
+            <a href="info/menu.htm">
+                <img src="img/view4.jpg" alt="วิวิ 4">
+            </a>
+
+            <a href="info/menu.htm">
+                <img src="img/egg.jpg" alt="อาหาร 1">
+            </a>
+
+            <a href="info/menu.htm">
+                <img src="img/fryrice.jpg" alt="อาหาร 2">
+            </a>
+
+        </div>
+    </section>
+
+    <section>
+        <h2 class="head">เมนูแนะนำ</h2>
+        <div class="recommend">
+
+            <div>
+                <h3>เมนูใหม่</h3>
+                <ul>
+                    <li>แกงส้ม</li>
+                    <li>ไข่เจียว</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>เมนูขายดี</h3>
+                <ul>
+                    <li>กระเพราหมูกรอบ</li>
+                    <li>ข้าวผัด</li>
+                    <li>น้ำเปล่า</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
 
 </html>
-

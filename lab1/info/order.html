@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .menu-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: cornflowerblue;
+        }
+
+        .menu-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(251, 80, 177);
+        }
+    </style>
 </head>
 
 <body>
@@ -13,89 +28,137 @@
 
 
     <h2>กรอกรายละเอียดการจัดส่ง</h2>
-    
+
     <label for="name">ชื่อ-นามสกุล</label><br>
     <input type="text" id="name" name="name" size="40" required>
-    <br><br>
+    <br>
     <label for="phone">เบอร์โทร</label><br>
     <input type="text" id="phone" name="phone" size="40" required>
-    <br><br>
+    <br>
 
     <label for="address">ที่อยู่</label><br>
     <input type="text" id="address" name="address" size="40" required>
-    <br><br>
+    <br>
 
     <label for="deliveryDate">วันที่จัดส่ง</label><br>
     <input type="date" id="deliveryDate" name="deliveryDate" required>
-    <br><br>
+    <br>
 
     <label for="deliveryTime">เวลาจัดส่ง</label><br>
     <input type="time" id="deliveryTime" name="deliveryTime" required>
     <br><br>
-    
 
 
 
-<h2>เลือกรายการอาหาร</h2>
+
+    <h2>เลือกรายการอาหาร</h2>
     <form>
 
-<table width="100%" border="0">
+        <table width="100%" border="0">
 
-<tr>
-    <td>
-        <img src="../img/images.jpg" alt="กระเพราหมูกรอบ" width="80" height="80">
-        <input type="checkbox" id="food1" name="food[]" value="กระเพราหมูกรอบ">
-        <label for="food1">กระเพราหมูกรอบ</label>
-    </td>
-    <td align="right">
-        75 บาท
-    </td>
-</tr>
+            <tr>
+                <td>
+                    <img align="center" src="../img/images.jpg" alt="กระเพราหมูกรอบ" width="80" height="80">
+                    <input type="checkbox" id="food1" name="food[]" value="กระเพราหมูกรอบ">
+                    <label for="food1" class="menu-name">กระเพราหมูกรอบ</label>
+                </td>
+                <td align="right">
+                    <span class="menu-price">75</span> บาท
+                </td>
+            </tr>
 
-<tr>
-    <td colspan="2">
-        จำนวน
-        <input type="number" name="qty_01" min="1" value="1">
+            <tr>
+                <td colspan="2">
+                    จำนวน
+                    <input type="number" name="qty_01" min="1" value="1">
 
-        คำสั่งพิเศษ
-        <textarea name="special_01" rows="2" cols="40"
-        placeholder="เช่น เผ็ดน้อย, ไม่ใส่ถั่วฝักยาว"></textarea>
-    </td>
-</tr>
+                    คำสั่งพิเศษ
+                    <textarea name="special_01" rows="2" cols="40"
+                        placeholder="เช่น เผ็ดน้อย, ไม่ใส่ถั่วฝักยาว"></textarea>
+                </td>
+            </tr>
 
-<tr>
-    <td colspan="2"><hr></td>
-</tr>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
 
-<tr>
-    <td>
-        <img src="../img/fryrice.jpg" alt="ข้าวผัด" width="80" height="80">
-        <input type="checkbox" id="food2" name="food[]" value="ข้าวผัด">
-        <label for="food2">ข้าวผัด</label>
-    </td>
-    <td align="right">
-        65 บาท
-    </td>
-</tr>
+            <tr>
+                <td>
+                    <img align="center" src="../img/fryrice.jpg" alt="ข้าวผัด" width="80" height="80">
+                    <input type="checkbox" id="food2" name="food[]" value="ข้าวผัด">
+                    <label for="food2" class="menu-name">ข้าวผัด</label>
+                </td>
+                <td align="right">
+                    <span class="menu-price">65</span> บาท
+                </td>
+            </tr>
 
-<tr>
-    <td colspan="2">
-        จำนวน
-        <input type="number" name="qty_02" min="1" value="1">
+            <tr>
+                <td colspan="2">
+                    จำนวน
+                    <input type="number" name="qty_02" min="1" value="1">
 
-        คำสั่งพิเศษ
-        <textarea name="special_02" rows="2" cols="40"
-        placeholder="เช่น ไม่ใส่ต้นหอม"></textarea>
-    </td>
-</tr>
+                    คำสั่งพิเศษ
+                    <textarea name="special_02" rows="2" cols="40" placeholder="เช่น ไม่ใส่ต้นหอม"></textarea>
+                </td>
+            </tr>
 
-</table>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
 
-<br>
+            <tr>
+                <td>
+                    <img align="center" src="../img/gangOrage.jpg" alt="แกงส้ม" width="80" height="80">
+                    <input type="checkbox" id="food3" name="food[]" value="แกงส้ม">
+                    <label for="food3" class="menu-name">แกงส้ม</label>
+                </td>
+                <td align="right"> <span class="menu-price">75</span> บาท </td>
+            </tr>
 
-<input type="submit" value="ยืนยันการสั่งอาหาร">
-<input type="reset" value="ล้างข้อมูล">
+            <tr>
+                <td colspan="2">
+                    จำนวน
+                    <input type="number" name="qty_03" value="1" min="1">
+                    คำสั่งพิเศษ
+                    <textarea name="special_03" rows="2" cols="40" placeholder="เช่น เผ็ดน้อย แพ้กุ้ง"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
 
-</form>
+            <tr>
+                <td>
+                    <img align="center" src="../img/egg.jpg" alt="ไข่เจียว" width="80" height="80">
+                    <input type="checkbox" id="food4" name="food[]" value="ไข่เจียว">
+                    <label for="food3" class="menu-name">ไข่เจียว</label>
+                </td>
+                <td align="right"> <span class="menu-price">30</span> บาท </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    จำนวน
+                    <input type="number" name="qty_04" value="1" min="1">
+                    คำสั่งพิเศษ
+                    <textarea name="special_04" rows="2" cols="40" placeholder="เช่น ไม่ใส่น้ำมัน"></textarea>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        <div style="text-align: right;">
+            <input type="submit" value="ยืนยันการสั่งอาหาร" align="right">
+            <input type="reset" value="ล้างข้อมูล" align="right">
+        </div>
+    </form>
 </body>
+
 </html>
