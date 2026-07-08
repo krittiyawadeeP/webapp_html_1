@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile2</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* background-color: cornflowerblue; */
+            background-image: url("img/way.webp");
+            background-repeat: repeat;
+            background-position: 0px 0px;
+            background-size: 150px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 300px;
+            height: 450px;
+           
+            background-color: pink;
+            text-align: center;
+            border: 2px solid black;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+            font-family: 'Poppins', sans-serif;
+            border-radius: 20px;
+
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid rgb(248, 4, 134);
+            margin:auto;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .card .job {
+            font-size: 20px;
+            color: deeppink;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .card .contact {
+            padding: 15px;
+            margin-top: auto;
+            background-color: black;
+            color: #f1f1f1;
+            font-size: 22px;
+        }
+
+        .card .location {
+            font-weight: 500;
+        }
+
+        .card button {
+            background-color: rgb(255, 248, 239);
+            padding: 5%;
+            margin: 15px;
+            font-size: 22px;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: 0.7s;
+        }
+
+        .card button:hover {
+            background-color: hotpink;
+            transform: scale(1.03);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="card">
+        <img alt="img" src="img/pic1.jpg">
+        <h1>john H watson</h1>
+        <p class="location">under the sea , Eyipt</p>
+        <p class="job">cool kids receptor </p>
+        <button>massage</button>
+    </div>
+</body>
+
+</html>
