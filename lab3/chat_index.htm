@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chat kun krub</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: pink;
+        display: flex;
+        justify-content: center; /* x */
+
+        align-items: center;
+        height: 100vh;
+      }
+
+      header {
+        height: 15%;
+        background-color: rgb(28, 162, 224);
+        font-size: 50px;
+        padding: 30px;
+        color: aliceblue;
+        font-weight: 600;
+      }
+
+      footer {
+        background-color: cornflowerblue;
+        height: 15%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+       
+      }
+
+      .container {
+        width: 400px;
+        height: 800px;
+        background-color: aliceblue;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+        display: flex;
+        flex-direction: column;
+        
+      }
+
+      .massage {
+        background-color: bisque;
+        height: 70%;
+
+        font-size: 20px;
+        padding: 15px;
+        overflow-y: scroll;
+       
+    
+      }
+
+      .sender {
+        float: right;
+        clear: both;
+        background-color: rgb(4, 130, 189);
+        padding: 15px;
+        color: aliceblue;
+        border-radius: 15px;
+        border-bottom-right-radius: 0px;
+        margin: 3px;
+        margin-left: 30px;
+        
+      }
+      .receiver {
+        float: left;
+        clear: both;
+        background-color: rgb(255, 129, 217);
+        padding: 15px;
+        color: rgb(2, 2, 2);
+        border-radius: 15px;
+        border-bottom-left-radius: 0px;
+        margin: 3px;
+        margin-right: 30px;
+      }
+
+      input{
+        border-radius: 10px;
+        font-size: 30px;
+        width: 70%;
+        /* margin: 30px;
+        padding: 15px; */
+        /* align-self: center; */
+      }
+
+      button{
+
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>chat app</header>
+      <div class="massage">
+        <p class="sender">hello my girl</p>
+        <p class="sender">Hey there! What are you up to? 😊</p>
+        <p class="receiver">Hey! Just practicing some CSS coding right now.</p>
+
+        <p class="sender">Awesome! Are you working on a specific project?</p>
+        <p class="receiver">
+          Yeah, trying to build a clean chat app UI, but the layout is kicking
+          my butt haha. 😅
+        </p>
+
+        <p class="sender">
+          Don't worry, CSS can be tricky. Did you try using Flexbox for the
+          container?
+        </p>
+        <p class="receiver">
+          Oh wow! I just applied it and it works perfectly!
+        </p>
+        <p class="receiver">
+          The footer stays locked at the bottom now and the chat history scrolls
+          smoothly. Thanks a lot!
+        </p>
+
+        <p class="sender">
+          Anytime! Glad it helped. Let me know if you need anything else.
+        </p>
+        <p class="receiver">
+          Will do! Time to style these chat bubbles and make them look pretty.
+          🎨
+        </p>
+      </div>
+      <footer>
+        <input />
+        <button>send here</button>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+</head>
+
+<style>
+    .gridContainer{
+        background-color: rgb(154, 199, 199);
+        border: 8px solid palevioletred;
+
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,50px);
+        grid-template-areas:
+        "h1 h1 h1 h1"
+        "a1 m1 m1 a2"
+        "a1 m1 m1 a2"
+        "f1 f1 f1 f1";
+    }
+
+    header{
+        grid-area: h1;
+    border: 1px solid black;}
+    
+    .aside1{grid-area: a1;
+     border: 1px solid black;}
+    
+     .aside2{grid-area: a2;
+     border: 1px solid black;}
+    
+     main{grid-area: m1;
+     border: 1px solid black;}
+    
+     footer{grid-area: f1;
+     border: 1px solid black;}
+
+
+
+</style>
+
+
+<body>
+    <div class="gridContainer">
+        <header>header</header>
+        <aside class="aside1">aside Left</aside>
+        <aside class="aside2">aside right</aside>
+        <main>main</main>
+        <footer>footer</footer>
+    </div>
+    
+</body>
+</html>
