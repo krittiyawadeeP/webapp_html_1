@@ -66,26 +66,29 @@
             cursor: pointer;
         }
 
-        /* Caption */
 
         .caption {
             padding: 0 15px 15px;
             font-size: 14px;
         }
 
-        /* Post Image */
-
         .postImage img {
             width: 100%;
+            height: 200px;
             display: block;
+            object-fit: cover;
         }
-
-        /* Link Preview */
 
         .addDetail {
             padding: 15px;
             background: #f3f3f3;
             border-top: 1px solid #ddd;
+
+            display: flex;
+            justify-content: space-between;
+            /* ดันซ้าย-ขวาออกจากกัน */
+            align-items: center;
+
         }
 
         .addDetail h3 {
@@ -134,6 +137,14 @@
         .gridAction button:hover {
             background: #eeeeee;
         }
+
+        .detailText {
+            display: flex;
+            flex-direction: column;         /* ให้ข้อความเรียงกันลงมาแนวดิ่ง */
+            gap: 4px;                       /* ระยะห่างระหว่างบรรทัดข้อความ */
+            flex: 1;                        /* ขยายพื้นที่ให้กว้างที่สุดเท่าที่จะทำได้ */
+            margin-left: 30px;
+        }
     </style>
 
 </head>
@@ -166,20 +177,21 @@
 
         <!-- Image -->
         <div class="postImage">
-            <img src="../lab2/img/post.jpg" alt="post">
+            <img src="../lab2/img/catFly.jpg" alt="post">
         </div>
 
         <!-- Detail -->
         <div class="addDetail">
 
-            <p class="p_Light">LEARN.MONGODB.COM</p>
+            <div class="detailText">
+                <p class="p_Light">LEARN.MONGODB.COM</p>
 
-            <h3>Register today for free!</h3>
+                <h3>Register today for free!</h3>
 
-            <p>
-                Are you a SQL developer who wants to use MongoDB?
-                Learn everything with MongoDB University.
-            </p>
+                <p>
+                    Are you a SQL developer who ...
+                </p>
+            </div>
 
             <button>Register</button>
 
