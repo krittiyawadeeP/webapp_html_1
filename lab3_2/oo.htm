@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Post</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #d9edf3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 420px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+        }
+
+        /* Header */
+
+        .disscrip {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .disscrip img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .name {
+            margin-left: 12px;
+            flex: 1;
+        }
+
+        .name h4 {
+            font-size: 16px;
+        }
+
+        .p_Light {
+            color: gray;
+            font-size: 12px;
+        }
+
+        .menu {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Caption */
+
+        .caption {
+            padding: 0 15px 15px;
+            font-size: 14px;
+        }
+
+        /* Post Image */
+
+        .postImage img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Link Preview */
+
+        .addDetail {
+            padding: 15px;
+            background: #f3f3f3;
+            border-top: 1px solid #ddd;
+        }
+
+        .addDetail h3 {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .addDetail button {
+            margin-top: 12px;
+            padding: 8px 18px;
+            border: none;
+            border-radius: 5px;
+            background: #1877f2;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Reaction */
+
+        .reaction {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Footer */
+
+        .gridAction {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .gridAction button {
+            border: none;
+            background: white;
+            padding: 14px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: .3s;
+        }
+
+        .gridAction button:hover {
+            background: #eeeeee;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="disscrip">
+
+            <img src="../lab2/img/pic1.jpg" alt="profile">
+
+            <div class="name">
+                <h4>Momo Toro Kung</h4>
+                <p class="p_Light">Sponsored · 6h</p>
+            </div>
+
+            <div class="menu">⋯</div>
+
+        </div>
+
+        <!-- Caption -->
+        <div class="caption">
+            <p>
+                Take advantage of your SQL skillset to quickly get up to speed on MongoDB.
+                Don't start over, just start!
+            </p>
+        </div>
+
+        <!-- Image -->
+        <div class="postImage">
+            <img src="../lab2/img/post.jpg" alt="post">
+        </div>
+
+        <!-- Detail -->
+        <div class="addDetail">
+
+            <p class="p_Light">LEARN.MONGODB.COM</p>
+
+            <h3>Register today for free!</h3>
+
+            <p>
+                Are you a SQL developer who wants to use MongoDB?
+                Learn everything with MongoDB University.
+            </p>
+
+            <button>Register</button>
+
+        </div>
+
+        <!-- Reaction -->
+        <div class="reaction">
+            <p>👍 2.4K Likes</p>
+            <p>103 Comments · 45 Shares</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+
+            <div class="gridAction">
+                <button>👍 Like</button>
+                <button>💬 Comment</button>
+                <button>↗ Share</button>
+            </div>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
