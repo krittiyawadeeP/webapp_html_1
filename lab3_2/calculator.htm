@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            background-color: aquamarine;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        input{
+            font-size: 40px;
+            width: 100%;
+            margin-bottom: 20px;
+
+        }
+
+        .container{
+            background-color: blue;
+            width: 310px;
+            height: 450px;
+            padding: 40px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(5,45px);
+            gap: 15px;
+        }
+
+        .equal_button{
+            grid-column: span 2;
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <input type="text">
+        <div class="buttons">
+            <button>+</button>
+            <button>-</button>
+            <button>x</button>
+            <button>/</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>0</button>
+            <button>.</button>
+            <button>c</button>
+            <button class="equal_button">=</button>
+        </div>
+    </div>
+    
+</body>
+</html>
