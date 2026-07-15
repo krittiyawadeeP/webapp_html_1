@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat kun na krub</title>
+</head>
+
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    
+    body {
+        background-color: rgb(255, 196, 78);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .container {
+        width: 250px;
+        height: 450px;
+        background-color: aqua;
+        border-radius: 20px;
+        overflow: hidden;  /* 👈 เพิ่มบรรทัดนี้เพื่อตัดมุมส่วนที่ล้นออกไป */
+
+
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        /* ตรงกลางแนวนอน */
+        align-content: center;
+    }
+
+    header {
+        height: 17%;
+        width: 100%;
+        background-color: rgb(61, 56, 121);
+        color: aliceblue;
+        font-size: 40px;
+        font-weight: 600;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .messages {
+        height: 70%;
+        background-color: rgb(232, 232, 218);
+        /* margin: 15px; */
+        font-size: 15px;
+        padding-top: 20px;
+        overflow-y: scroll;
+    }
+
+    .sender {
+        float: right;
+        clear: both;
+        background-color: rgb(41, 118, 212);
+        color: aliceblue;
+        padding: 8px;
+        margin: 7px;
+        margin-left: 50px;
+        border-radius: 15px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .receiver {
+        float: left;
+        clear: both;
+        background-color: pink;
+        padding: 8px;
+        margin: 7px;
+        margin-right: 50px;
+        border-radius: 15px;
+        border-bottom-left-radius: 0px;
+    }
+
+    footer {
+        background-color: rgb(147, 172, 179);
+        height: 13%;
+        display: flex;
+        padding: 12px;
+    }
+
+    input {
+        border-radius: 15px;
+        border: rgb(139, 139, 139) solid 1.5px;
+        margin-right: 10px;
+        padding-left: 10px;
+    }
+
+    button {
+        background-color: rgb(61, 56, 121);
+        border-radius: 15px;
+        border: 0px;
+        padding: 8px;
+        color: aliceblue;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <header>chat app</header>
+        <div class="messages">
+            <p class="sender">Hello my girl ❤️</p>
+            <p class="receiver">Shut up.</p>
+            <p class="sender">Did you sleep well?</p>
+            <p class="receiver">I was sleeping well until you texted.</p>
+            <p class="sender">Aw, you dream about me? 🥰</p>
+            <p class="receiver">In my nightmares, yes.</p>
+            <p class="sender">Ouch! That hurts right here 💔</p>
+            <p class="receiver">Drama queen. What do you want?</p>
+            <p class="sender">Just wanted to say I love you.</p>
+            <p class="receiver">...Fine. I love you too, I guess. 🙄</p>
+        </div>
+
+        <footer>
+            <input type="text">
+            <button> send </button>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
