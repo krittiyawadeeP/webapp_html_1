@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title {
+            display: block;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            background-color:rgb(234, 228, 228);
+            width: 500px;
+            height: 600px;
+
+            padding: 50px;
+
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .full {
+            margin-bottom: 20px;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            accent-color: orangered;
+        }
+
+        input {
+            width: 100%;
+            padding: 7px;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        form {
+            /* background-color: blue; */
+        }
+
+        button {
+            background-color: orangered;
+            margin-top: 20px;
+            padding: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+            border: none;
+        }
+
+        .checkbox label {
+            font-size: 12px;
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <header>
+            <h1>register</h1>
+            <p>Hallo let fill out all feild if you want to jain us</p>
+        </header>
+
+        <form>
+            <div class="row">
+                <div class="haft">
+                    <label for="firstName" class="title">Frist Name</label>
+                    <input type="text" name="firstName" placeholder="e.g.John">
+                </div>
+
+                <div class="haft">
+                    <label for="lastName" class="title">Last Name</label>
+                    <input type="text" name="lastName" placeholder="e.g.Smith">
+                </div>
+            </div>
+
+
+            <div class="full">
+                <label for="email" class="title">Email address</label>
+                <input type="email" name="email" placeholder="e.g.goback@gmail.com">
+            </div>
+
+
+            <div class="row">
+                <div class="haft">
+                    <label for="phone" class="title">Phone NUmber</label>
+                    <input type="number" name="phone" placeholder="+00 0000 000 0000">
+                </div>
+
+                <div class="haft">
+                    <label for="website" class="title">Website</label>
+                    <input type="url" name="website" placeholder="e.g.http://google.com">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="haft">
+                    <label for="password" class="title">password</label>
+                    <input type="password" name="password" placeholder="your password">
+                </div>
+
+                <div class="haft">
+                    <label for="re" class="title">re type password</label>
+                    <input type="password" name="re" placeholder="your password">
+                </div>
+            </div>
+
+
+            <div class="checkbox">
+                <input type="checkbox" name="checkbox" checked>
+                <label for="checkbox">creat account means you are ok withconditions and our policy</label>
+            </div>
+            <button>Resister</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
