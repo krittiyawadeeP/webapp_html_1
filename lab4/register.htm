@@ -29,7 +29,7 @@
         .container {
             display: flex;
             flex-direction: column;
-            background-color:rgb(234, 228, 228);
+            background-color:rgb(228, 233, 234);
             width: 500px;
             height: 600px;
 
@@ -73,11 +73,22 @@
             padding-left: 40px;
             padding-right: 40px;
             border: none;
+            color: aliceblue;
         }
 
         .checkbox label {
             font-size: 12px;
 
+        }
+
+        header p {
+            color: rgb(109, 106, 106);
+
+        }
+
+
+        .underline{
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -137,7 +148,11 @@
 
             <div class="checkbox">
                 <input type="checkbox" name="checkbox" checked>
-                <label for="checkbox">creat account means you are ok withconditions and our policy</label>
+                <label for="checkbox">
+                    creat account means you are ok with conditions and our policy
+                    <span class="underline">conditions</span> and
+                    <span class="underline"> our policy</span>
+                </label>
             </div>
             <button>Resister</button>
 
