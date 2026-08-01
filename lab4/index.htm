@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 Index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgb(255, 169, 249), rgb(236, 255, 131));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: min(520px, 100%);
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: rgb(80, 80, 80);
+            margin-bottom: 30px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        a {
+            display: block;
+            padding: 14px 20px;
+            background-color: palevioletred;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: .2s;
+        }
+
+        a:hover {
+            background-color: rgb(87, 63, 41);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>Lab 4</h1>
+        <p>Choose a page to open</p>
+
+        <nav>
+            <a href="contact.htm">Contact</a>
+            <a href="register.htm">Register</a>
+            <a href="web.htm">Web</a>
+        </nav>
+    </main>
+</body>
+
+</html>
