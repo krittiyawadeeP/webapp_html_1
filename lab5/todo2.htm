@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="text" type="text" value="Hello world">
+    <input id="color" type="color" value="#ff1493">
+    <button onclick="showMassages()">Click</button>
+    <p id="result">hello world</p>
+
+    <script>
+        function showMassages() {
+            const text = document.getElementById("text").value;
+            const color = document.getElementById("color").value;
+            const theResult = document.getElementById("result");
+
+            theResult.innerText = text;
+            theResult.style.color = color;
+        }
+
+    </script>
+</body>
+
+</html>
