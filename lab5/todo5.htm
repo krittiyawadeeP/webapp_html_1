@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .containerShow {
+            display: flex;
+            flex-direction: row;
+            margin-top: 40px;
+            gap: 19px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="message">
+    <button onclick="addMessage()">Add</button>
+
+
+    <div class="containerShow">
+        <button onclick="previous()">Previous</button>
+        <p id="show">ยังไม่มีข้อความ</p>
+        <button onclick="next()">Next</button>
+    </div>
+
+
+
+
+
+    <script>
+        let index;
+        let massageOut = [];
+
+
+        function addMessage() {
+            const input = document.getElementById("message");
+            const text = input.value;
+
+
+            if (text !== "") {
+                massageOut.push(text);
+                if (massageOut.length == 1) {
+                    index = 0;
+                    document.getElementById("show").innerText = massageOut[index];
+                }
+                input.value = "";
+            }
+
+        }
+
+        function next() {
+            if (massageOut.length === 0) return 0;
+
+            index++;
+
+            if (index >= massageOut.length) {
+                index = 0;
+            }
+            document.getElementById("show").innerText = massageOut[index];
+
+        }
+
+        function previous() {
+
+            if (massageOut.length === 0) return 0;
+
+            index--;
+            if (index < 0)
+                index = massageOut.length - 1;
+
+            document.getElementById("show").innerText = massageOut[index];
+
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

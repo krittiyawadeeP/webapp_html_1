@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 Home</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        main {
+            width: min(920px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 48px 0;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 32px;
+            color: #111827;
+        }
+
+        .subtitle {
+            margin: 0 0 28px;
+            color: #4b5563;
+            font-size: 16px;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .menu a {
+            display: block;
+            min-height: 112px;
+            padding: 18px;
+            border: 1px solid #d7dee8;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #1f2937;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(31, 41, 55, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .menu a:hover {
+            transform: translateY(-3px);
+            border-color: #3b82f6;
+            box-shadow: 0 12px 26px rgba(31, 41, 55, 0.14);
+        }
+
+        .menu strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 20px;
+            color: #2563eb;
+        }
+
+        .menu span {
+            display: block;
+            line-height: 1.5;
+            color: #4b5563;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>หน้าแรก Lab 5</h1>
+        <p class="subtitle">เลือกหน้าแบบฝึกหัดที่ต้องการเปิด</p>
+
+        <nav class="menu" aria-label="Lab 5 pages">
+            <a href="todo1.htm">
+                <strong>Todo 1</strong>
+                <span>เปลี่ยนสีปุ่มระหว่างสีแดงและสีน้ำเงิน</span>
+            </a>
+            <a href="todo2.htm">
+                <strong>Todo 2</strong>
+                <span>แสดงข้อความและเปลี่ยนสีข้อความ</span>
+            </a>
+            <a href="todo3.htm">
+                <strong>Todo 3</strong>
+                <span>เพิ่มและลดตัวเลขด้วยปุ่ม</span>
+            </a>
+            <a href="todo4.htm">
+                <strong>Todo 4</strong>
+                <span>เพิ่มข้อความลงในรายการ</span>
+            </a>
+            <a href="todo5.htm">
+                <strong>Todo 5</strong>
+                <span>เพิ่มข้อความและเลื่อนดูข้อความก่อนหน้า/ถัดไป</span>
+            </a>
+        </nav>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Messasge</label>
+    <input type="text" id="text">
+    <button onclick="addText()">click</button>
+
+    <div id="list"></div>
+    
+    <script>
+        function addText(){
+            const newText = document.getElementById("text").value;
+            const p = document.createElement("p");//คือการสร้าง <p> ใหม่
+                p.innerText =newText;
+            document.getElementById("list").appendChild(p);  //คือเอา <p> ที่สร้างขึ้นมา ต่อท้ายรายการเดิม
+            document.getElementById("text").value="";
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
