@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    <div class="container">
+        <h1>BMI calculator</h1>
+        <label for="h">your Height(cm)</label>
+        <input type="number" name="h" id="h">
+
+        <label for="w">your weight</label>
+        <input type="number" name="w" id="w">
+
+        <button onclick="computeBMI()">Compute BMI</button>
+
+        <div id="containerShow"></div>
+        <div id="condition"></div>
+
+
+    </div>
+
+    <script>
+        function computeBMI(){
+            let height = document.getElementById("h").value;
+            let weight = document.getElementById("w").value;
+
+            let BMI = weight/(Math.pow(height,2))*10000;
+
+            document.getElementById("containerShow").innerHTML = BMI;
+
+            let condition;
+            if(BMI < 18.5)
+            condition = "under weight";
+            else if(BMI <= 25)
+            condition = "Normal";
+            else if(BMI <=30)
+            condition="overweight";
+            else
+            condition="obese";
+
+            document.getElementById("condition").innerHTML = condition;
+
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

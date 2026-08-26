@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTTER</title>
+</head>
+<body>
+    <H1>Counter</H1>
+    <h1 id="result">0</h1>
+
+    <div class="bts"   id="result">
+        <button id="minus" onclick="minus()">-</button>
+        <button id="reset" onclick="reset()">reset</button>
+        <button id="add" >+</button>
+    </div>
+
+    <script>
+
+        let counter = 0;
+
+        function reset(){
+            counter = 0;
+            document.getElementById("result").innerText = counter;
+        }
+
+        // function show(){
+        //     document.getElementById("result").innerText = counter;
+        // }
+
+        function minus(){
+            counter--;
+            // show();
+            document.getElementById("result").innerHTML = counter;
+        }
+
+
+
+
+        
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
