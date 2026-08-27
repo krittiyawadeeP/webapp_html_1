@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container{
+            height: 500px;
+            width: 300px;
+            background-color: aqua;
+            border-radius: 20px;
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+
+            border: 1px solid black;
+            /* padding: 20px; */
+        }
+
+        header{
+            background-color: blue;
+            padding: 20px;
+            color: rgb(246, 244, 242);
+            text-align: center;
+
+            
+        }
+        main{
+            background-color: rgb(205, 230, 252);
+            height: 65%;
+            overflow-y: scroll;
+        
+        }
+
+        main > p{
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .send{
+            background-color: rgb(124, 124, 255);
+            float: left;
+            clear: both;
+            border-bottom-left-radius: 0px;
+            margin-right: 60px;
+
+
+
+        }
+        
+        .recive{
+            background-color: rgb(254, 254, 254);
+            float: right;
+             clear: both;
+             border-bottom-right-radius: 0px;
+             margin-left: 60px;
+
+        }
+
+        footer{
+            background-color: aliceblue;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex: 1;
+            /* gap: 20px; */
+        }
+
+        footer input{
+            padding: 7px;
+            border-radius: 30px;
+        }
+        button{
+            padding: 10px;
+             border-radius: 30px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>chat appplication</h1>
+            <h2>momotaro</h2>
+        </header>
+
+        <main>
+            <p class="recive">hello gay</p>
+            <p class="send">wtf who you are bro</p>
+             <p class="recive">Sounds great! Let's meet at 6 PM.</p>
+            <p class="send">wtf who you are bro</p>
+             <p class="recive">Not much. Just watching a movie. WBU? </p>
+            <p class="send">wtf who you are bro</p>
+             <p class="recive">hello gay</p>
+            <p class="send">Same here. Quite bored. Want to grab some food later?</p>
+             <p class="recive">hello gay</p>
+            <p class="send">wtf who you are bro</p>
+
+        </main>
+
+        <footer>
+            <input type="text">
+            <button type="submit">submit</button>
+        </footer>
+
+
+    </div>
+
+</body>
+
+</html>

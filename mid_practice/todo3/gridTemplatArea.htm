@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,50px);
+            grid-template-areas: 
+            
+            "h1 h1 h1 h1"
+            "l m m  r"
+            "l m m  r"
+            "f f f f";
+        }
+
+        
+
+        header{
+            grid-area: h1;
+            background-color: aqua;
+        }
+
+        .left{
+            grid-area: l;
+            background-color: aquamarine;
+        }
+
+        .right{
+            grid-area: r;
+            background-color: rgb(8, 77, 54);
+        }
+
+        main{
+             grid-area: m;
+            background-color: rgb(81, 107, 98);
+
+        }
+
+        footer
+        {
+            grid-area: f;
+            background-color: brown;
+        }
+
+
+    </style>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <header>header</header>
+        <aside class="left">leftAside</aside>
+        <main class="mid">mian</main>
+        <aside class="right">right</aside>
+        <footer>foot</footer>
+    </div>
+    
+</body>
+</html>

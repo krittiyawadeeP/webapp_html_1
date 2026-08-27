@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all_OUR_Menu</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+
+
+        .head {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+
+
+        }
+
+        .input_num {
+            width: 50px;
+        }
+
+        .item {
+            border: 1px solid black;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+
+        .detail {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+
+        span {
+            font-weight: 600;
+            color: green;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .row div {
+            flex: 1;
+        }
+
+        .delivery input {
+            width: 100%;
+            margin-bottom: 10px;
+
+        }
+
+        .delivery label {
+            display: block;
+        }
+
+        .delivery textarea {
+            height: 50px;
+            width: 100%;
+        }
+
+        .group_buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            gap: 10px;
+            margin-top: 20px;
+
+        }
+
+        .item{
+            background-color: rgb(209, 208, 208);
+        }
+    </style>
+</head>
+
+
+<body>
+    <menu>
+        <ol>
+            <li> <a href="menu.htm">menu</a></li>
+            <li> <a href="index.htm">Home</a></li>
+        </ol>
+        <br>
+    </menu>
+    <header>
+        <h1>all menu</h1>
+        <p>watch our menu to look how interting and bueutifull in our motivation to creat art of food enjoing you mael
+            naa</p>
+    </header>
+    <br><br>
+    <h2>เลือกรายการอาหาร</h2>
+    <hr>
+    <br>
+
+    <form>
+        <section class="container">
+            <div class="item">
+                <div class="head">
+                    <label>
+                        <input type="checkbox" id="a">
+                        <label for="a"> ข้าวไข่เจียว</label>
+                    </label>
+
+                    <span> 30 บาท </span>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="detail">
+                    <label for="num1">จำนวน</label>
+                    <input type="number" id="num1" class="input_num" value="1">
+
+                    <label for="p1">คำสั่งพิเศษ</label>
+                    <input type="text" name="p1" id="p1" placeholder="เช่น เผ็ดมาก">
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="head">
+                    <label>
+                        <input type="checkbox" id="b">
+                        <label for="b"> ข้าวกระเพรา</label>
+                    </label>
+
+                    <span> 30 บาท </span>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="detail">
+                    <label for="num2">จำนวน</label>
+                    <input type="number" id="num2" class="input_num" value="1">
+
+                    <label for="p2">คำสั่งพิเศษ</label>
+                    <input type="text" name="p2" id="p2" placeholder="เช่น เผ็ดมาก">
+                </div>
+            </div>
+
+
+        </section>
+        <br>
+
+        <section class="delivery">
+            <h2>ข้อมูลการจัดส่ง</h2>
+            <hr>
+            <br>
+
+            <label for="b1">ชื่อผู้รับ</label>
+            <input type="text" id="b1" placeholder="สมเกียติ ยุธศษสตร์" name="customerName">
+            <br>
+            <label for="b2">เบอร์โทร</label>
+            <input type="tel" id="b2" name="PhoneNum" placeholder="0992XXXXXX">
+
+            <div class="row">
+                <div>
+                    <label for="b3">วันที่จัดส่ง</label>
+                    <input type="date" name="date" id="b3">
+                </div>
+                <div>
+                    <label for="b4">เวลาจัดส่ง</label>
+                    <input type="time" name="time" id="b4">
+                </div>
+            </div>
+
+            <label for="b5">ที่อยู่</label>
+            <textarea name="b5" id="b5" placeholder="ใครว่ะนะ"></textarea>
+
+
+
+
+
+        </section>
+
+        <div class="group_buttons">
+            <button type="submit">submit</button>
+            <button type="reset">reset</button>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
