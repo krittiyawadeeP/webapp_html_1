@@ -12,7 +12,7 @@
     <div class="bts"   id="result">
         <button id="minus" onclick="minus()">-</button>
         <button id="reset" onclick="reset()">reset</button>
-        <button id="add" >+</button>
+        <button id="add" onclick="add()" >+</button>
     </div>
 
     <script>
@@ -21,17 +21,24 @@
 
         function reset(){
             counter = 0;
+            // document.getElementById("result").innerText = counter;
+            show();
+        }
+
+        function show(){
             document.getElementById("result").innerText = counter;
         }
 
-        // function show(){
-        //     document.getElementById("result").innerText = counter;
-        // }
-
         function minus(){
             counter--;
-            // show();
-            document.getElementById("result").innerHTML = counter;
+            show();
+        }
+
+
+        function add(){
+            counter++;
+            show();
+
         }
 
 

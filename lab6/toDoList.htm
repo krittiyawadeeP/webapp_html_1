@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+             min-height: 100vh;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+        }
+        .container{
+            height: 300px;
+            width: 300px;
+            background-color: aqua;
+            /* overflow: hidden; */
+        }
+
+
+
+        .todo{
+            background-color: beige;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .action{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        img{
+            /* background-color: blue; */
+            /* margin-top: 10px; */
+        }
+
+        #inputTodo{
+            width: 293px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input onkeydown="addTodo()" id="inputTodo" type="text" placeholder="enter your task">
+        <div todos>
+            <div class="todo">
+                <span id="textTodo">todo 1</span>
+
+                <div class="action">
+                    <input type="checkbox" checked="checked">
+                    <img src="images/delete_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" onclick="deleteAction()" alt="bin">
+                    <!-- <button id="delete" >🗑️</button> -->
+                </div>
+                
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function addTodo(event) {
+            
+            
+        }
+
+    </script>
+    
+</body>
+</html>
