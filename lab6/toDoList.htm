@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>todoList</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -12,26 +14,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: rgb(255, 191, 225);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         .container {
-            height: 300px;
             width: 300px;
             background-color: aqua;
-            /* overflow: hidden; */
+            overflow: hidden;
+            border-radius: 15px;
         }
 
-
-
         .todo {
-            background-color: beige;
+            background-color: rgb(255, 255, 156);
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             padding: 10px;
 
-            /* text-decoration: line-through; */
+            border-top-style: dashed;
+            border-top-color: rgb(160, 88, 123);
+
+            padding: 15px;
         }
 
         .action {
@@ -42,17 +53,16 @@
             gap: 10px;
         }
 
-        img {
-            /* background-color: blue; */
-            /* margin-top: 10px; */
-        }
-
         #inputTodo {
-            width: 293px;
+            padding: 20px;
+            width: 100%;
+            /* must set boader box in * */
+            font-size: 15px;
+            border: none;
         }
 
         input[type="checkbox"]:checked {
-            accent-color: green;
+            accent-color: rgb(86, 137, 255);
         }
     </style>
 </head>
@@ -68,10 +78,7 @@
                     <input type="checkbox" checked="checked" onchange="checkTodo(this)">
                     <img src="images/delete_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" onclick="deleteAction(this)"
                         alt="bin">
-                    <!-- <button id="delete" >🗑️</button> -->
                 </div>
-
-
             </div>
         </div>
 
@@ -86,13 +93,10 @@
                 if (inputTodo == "")
                     return 0;
 
-                
-                    // document.getElementById("textTodo").innerText = inputTodo;
+                let newDiv = document.createElement("div");
+                newDiv.className = "todo";
 
-                    let newDiv = document.createElement("div");
-                    newDiv.className = "todo";
-
-                    newDiv.innerHTML = `
+                newDiv.innerHTML = `
             <span>${inputTodo}</span>
             <div class="action">
                 <input type="checkbox" onchange="checkTodo(this)" >
@@ -105,9 +109,9 @@
             </div>
         `;
 
-                    document.getElementsByClassName("todos")[0].appendChild(newDiv);
-                    document.getElementById("inputTodo").value = "";
-                
+                document.getElementsByClassName("todos")[0].appendChild(newDiv);
+                document.getElementById("inputTodo").value = "";
+
             }
         }
 
@@ -128,7 +132,6 @@
             else {
                 textTitle.style.textDecoration = "none";
             }
-
         }
 
 
@@ -137,7 +140,6 @@
             thatTodo.remove();
             //or you can 
             //thisTodo.parentElement.parentElement.remove();
-
         }
 
     </script>

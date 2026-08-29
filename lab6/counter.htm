@@ -1,57 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COUNTTER</title>
+
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+        }
+
+
+        #minus{
+            background-color: red;
+        }
+
+        #add{
+            background-color: green;
+        }
+
+        .bts button{
+            padding: 10px;
+            border: none;
+        }
+    </style>
 </head>
+
 <body>
     <H1>Counter</H1>
     <h1 id="result">0</h1>
 
-    <div class="bts"   id="result">
-        <button id="minus" onclick="minus()">-</button>
+    <div class="bts" id="result">
+        <button id="minus" onclick="minus()"> - </button>
         <button id="reset" onclick="reset()">reset</button>
-        <button id="add" onclick="add()" >+</button>
+        <button id="add" onclick="add()"> + </button>
     </div>
 
     <script>
 
         let counter = 0;
 
-        function reset(){
+        function reset() {
             counter = 0;
             // document.getElementById("result").innerText = counter;
             show();
         }
 
-        function show(){
+        function show() {
             document.getElementById("result").innerText = counter;
+            if (counter == 0)
+                document.getElementById("result").style.color = "black";
+            else if (counter > 0) 
+                document.getElementById("result").style.color = "green";
+            else
+                document.getElementById("result").style.color = "red";
         }
 
-        function minus(){
-            counter--;
+        function minus() {
+            counter--; 
             show();
         }
 
-
-        function add(){
+        function add() {
             counter++;
             show();
-
         }
-
-
-
-
-        
-
-
-
-
-
     </script>
 
-    
+
 </body>
+
 </html>

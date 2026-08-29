@@ -1,53 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI</title>
+
+
+    <style>
+
+        body{
+            font-family: monospace;
+            background-color: rgb(0, 3, 192);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 400px;
+            height: 380px;
+            background-color: rgb(255, 187, 236);
+
+        
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            padding: 20px;
+            justify-content: center;
+
+            border-radius: 20px;
+            box-shadow: 2px 4px 10px rgb(179, 170, 170,0.1);
+        }
+
+        input{
+            padding: 8px;
+        }
+
+
+        #containerShow{
+            background-color: azure;
+            padding: 8px;
+        }
+
+        p{
+            margin-top:10px ;
+             padding: 8px;
+        }
+
+        button{
+            margin-bottom: 20px;
+            margin-top: 10px;
+            padding: 8px;
+            background-color: rgb(255, 29, 105);
+            border-radius: 15px;
+            border: none;
+            color: aliceblue;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
-        <h1>BMI calculator</h1>
-        <label for="h">your Height(cm)</label>
+        <h1>Body mas index (BMI) calculator</h1>
+        <label for="h">your Height (cm)</label>
         <input type="number" name="h" id="h">
 
-        <label for="w">your weight</label>
+        <label for="w">your weight (kg)</label>
         <input type="number" name="w" id="w">
 
         <button onclick="computeBMI()">Compute BMI</button>
 
-        <div id="containerShow"></div>
-        <div id="condition"></div>
+        <div id="containerShow">0.0</div>
+        <p>weight conditions : <span id="condition"></span> </p>
 
 
     </div>
 
     <script>
-        function computeBMI(){
+        function computeBMI() {
             let height = document.getElementById("h").value;
             let weight = document.getElementById("w").value;
 
-            let BMI = weight/(Math.pow(height,2))*10000;
+            let BMI = weight / (Math.pow(height, 2)) * 10000;
 
             document.getElementById("containerShow").innerHTML = BMI;
 
             let condition;
-            if(BMI < 18.5)
-            condition = "under weight";
-            else if(BMI <= 25)
-            condition = "Normal";
-            else if(BMI <=30)
-            condition="overweight";
+            if (BMI < 18.5)
+                condition = "under weight";
+            else if (BMI <= 25)
+                condition = "Normal";
+            else if (BMI <= 30)
+                condition = "overweight";
             else
-            condition="obese";
+                condition = "obese";
 
             document.getElementById("condition").innerHTML = condition;
-
-
         }
 
 
     </script>
-    
+
 </body>
+
 </html>
