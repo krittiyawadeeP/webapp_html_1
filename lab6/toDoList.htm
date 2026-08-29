@@ -33,6 +33,7 @@
 
         .todo {
             background-color: rgb(255, 255, 156);
+           
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -63,6 +64,7 @@
 
         input[type="checkbox"]:checked {
             accent-color: rgb(86, 137, 255);
+            
         }
     </style>
 </head>
@@ -71,8 +73,8 @@
     <div class="container">
         <input onkeydown="addTodo(event)" id="inputTodo" type="text" placeholder="enter your task">
         <div class="todos">
-            <div class="todo">
-                <span style="text-decoration: line-through;">todo 1</span>
+            <div class="todo" style="background-color: rgb(242, 242, 210);">
+                <span style="text-decoration: line-through; color: rgb(95, 96, 96); ">todo 1</span>
 
                 <div class="action">
                     <input type="checkbox" checked="checked" onchange="checkTodo(this)">
@@ -128,9 +130,13 @@
 
             if (checkbox.checked) {
                 textTitle.style.textDecoration = "line-through";
+                textTitle.style.color = "rgb(95, 96, 96)"
+                todo.style.backgroundColor = "rgb(242, 242, 210)";
             }
             else {
                 textTitle.style.textDecoration = "none";
+                 textTitle.style.color = "black"
+                todo.style.backgroundColor = "rgb(255, 255, 156)";
             }
         }
 
