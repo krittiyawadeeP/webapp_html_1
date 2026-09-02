@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>click me after 5 secound</p>
+    <div id="count">5</div>
+    <button id="stop" onclick="stopBomb()">click me</button>
+    <button id="restart" onclick="restart()">restart</button>
+    
+    <script>
+
+        let c=5;
+
+        const myTimeOut = setInterval(countDown,1000);
+
+        function countDown(){
+            
+            if(c<0){
+                document.getElementById("count").innerText= "you bomed";
+                clearTimeout(myTimeOut);
+                 return 0;
+
+            }
+        
+        
+            document.getElementById("count").innerText= c;
+            c--;
+            // myTimeOut = setTimeout(countDown,1000);
+            //ยัดใส่ในตัวแปร mytime out เพื่อจัดการต่อได้ เพื่อเค
+        }
+
+        
+
+        function stopBomb(){
+            if(c>0){ 
+                document.getElementById("count").innerText= "you safe";
+                clearTimeout(myTimeOut);    
+            }
+        }
+
+
+        function restart(){
+            document.getElementById("count").innerText= "";
+            c = 5 ;
+            // clearTimeout(myTimeOut);  
+            countDown();
+        }
+        
+        countDown();
+
+
+
+    </script>
+</body>
+</html>
