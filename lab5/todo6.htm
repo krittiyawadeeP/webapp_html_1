@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3 id="owner"></h3>
+    <p id="carList"></p>
+
+    <script>
+        const myObj = {
+            name: "John",
+            age: 30,
+            cars: [
+                {
+                    name: "Ford",
+                    models: ["Fiesta", "Focus", "Mustang"]
+                },
+                {
+                    name: "BMW",
+                    models: ["320", "X3", "X5"]
+                },
+                {
+                    name: "Fiat",
+                    models: ["500", "Panda"]
+                }
+            ]
+        };
+
+        document.getElementById("owner").innerText = "owner : " + myObj.name + "(" + myObj.age + ")";
+
+        let carList = document.getElementById("carList");
+        for (let i = 0; i < myObj.cars.length; i++) {
+            let list_a_car = document.createElement("li");
+            list_a_car.innerText = myObj.cars[i].name;
+
+            let order_a_brand = document.createElement("ol");
+            // order_a_brand.innerText=myObj.cars[]
+
+            for (let j = 0; j < myObj.cars[i].models.length; j++) {
+                let model = document.createElement("li");
+                
+                model.innerText = myObj.cars[i].models[j];
+
+                order_a_brand.appendChild(model);
+            }
+
+
+            list_a_car.appendChild(order_a_brand);
+            carList.appendChild(list_a_car);
+
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>
