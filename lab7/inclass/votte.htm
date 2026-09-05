@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .result{
+            display: flex;
+            flex-direction: row;
+            gap: 80px;
+            margin-left: 10px;
+
+            visibility: hidden;
+        }
+
+        #back_vote, #clear_Vote{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <h1>vote the favorit</h1>
+        <div>
+            <button id="a">hamberger</button>
+            <button id="b">pizza</button>
+            <button id="c">hotdog</button>
+        </div>
+
+        <div class="result">
+            <p>a</p>
+            <p>b</p>
+            <p>c</p>
+        </div>
+
+        <button id="back_vote">back to vote</button>
+        <button id="showBtn" onclick="showVote()">show vote</button>
+        <button id="clear_Vote">clear vote</button>
+    </h1>
+
+    <script>
+        function showVote(){
+            //หรือ document.getElementsByClassName("result")[0].style.visibility = "visible"; 
+            document.querySelector(".result").style.visibility ="visible";
+            document.getElementById("showBtn").style.visibility="hidden"
+        }
+    </script>
+    
+</body>
+</html>

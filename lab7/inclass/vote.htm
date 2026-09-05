@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>vote the favorit</h1>
+        <div>
+            <button id="a" onclick="vote('burger')">hamberger</button>
+            <button id="b"onclick="vote('pizza')">pizza</button>
+            <button id="c"onclick="vote('hotdog')">hotdog</button>
+        </div>
+
+        <button id="showBtn" onclick="showVote()">show vote</button>
+
+
+        <script>
+            function showVote() {
+                window.location.href="showVote.htm"
+                
+            }
+
+            function vote(type) {
+
+                let burger = Number(localStorage.getItem("burger")) || 0;
+                let pizza = Number(localStorage.getItem("pizza")) || 0;
+                let hotdog = Number(localStorage.getItem("hotdog")) || 0;
+                
+                if (type == "burger") {
+                    burger++;
+                    localStorage.setItem("burger", burger);
+                } else if (type == "pizza") {
+                    pizza++;
+                    localStorage.setItem("pizza", pizza);
+                } else if (type == "hotdog") {
+                    hotdog++;
+                    localStorage.setItem("hotdog", hotdog);
+                }
+            }
+        </script>
+
+    
+</body>
+</html>

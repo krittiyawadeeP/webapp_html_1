@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .btns :disabled{
+            cursor: not-allowed;
+        } */
+        .btns button{
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>vote the favorit</h1>
+        <div class="btns">
+            <button id="a" >hamberger</button>
+            <button id="b">pizza</button>
+            <button id="c">hotdog</button>
+        </div>
+
+        <div>
+            <span id="ra">0</span>
+            <span id="rb">0</span>
+            <span id="rc">0</span>
+        </div>
+
+        <br>
+
+        <button onclick="backTovote()">back to vote</button>
+        <button onclick="clearbtn()">clear</button>
+
+        <script>
+            function show(){
+                let a = Number(localStorage.getItem("burger")) || 0;
+                let b = Number(localStorage.getItem("pizza")) || 0;
+                let c = Number(localStorage.getItem("hotdog")) || 0;
+
+                document.getElementById("ra").innerHTML = a;
+                document.getElementById("rb").innerHTML = b;
+                document.getElementById("rc").innerHTML = c;
+            }
+
+            function backTovote(){
+
+                window.location.href = "vote.htm";
+            }
+
+             function clearbtn() {
+                localStorage.setItem("burger", 0);
+                localStorage.setItem("pizza", 0);
+                localStorage.setItem("hotdog", 0);
+                show(); // อัปเดตหน้าจอให้เป็น 0 ทันที
+            }
+
+            show();
+        </script>
+    
+</body>
+</html>
