@@ -19,18 +19,22 @@
         <script>
             function showVote() {
                 window.location.href="showVote.htm"
-                
             }
+
+             let burger = Number(document.getElementById("a")) || 0;
+                let pizza = Number(localStorage.getItem("pizza")) || 0;
+                let hotdog = Number(localStorage.getItem("hotdog")) || 0;
 
             function vote(type) {
 
-                let burger = Number(localStorage.getItem("burger")) || 0;
-                let pizza = Number(localStorage.getItem("pizza")) || 0;
-                let hotdog = Number(localStorage.getItem("hotdog")) || 0;
+                // let burger = Number(localStorage.getItem("burger")) || 0;
+                // let pizza = Number(localStorage.getItem("pizza")) || 0;
+                // let hotdog = Number(localStorage.getItem("hotdog")) || 0;
                 
                 if (type == "burger") {
                     burger++;
                     localStorage.setItem("burger", burger);
+                    //localStorage.setItem(key, value);
                 } else if (type == "pizza") {
                     pizza++;
                     localStorage.setItem("pizza", pizza);

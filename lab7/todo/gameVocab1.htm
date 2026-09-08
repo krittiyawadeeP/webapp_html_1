@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list of Vocab</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 250px;
+
+        }
+
+        .list {
+            background-color: aqua;
+        }
+
+        .vocab_in_list {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        #start_Game {
+            visibility: hidden;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input id="input" onkeydown="addVocab(event)" type="text"
+            placeholder="input vocab in 3 labels and 5 maximum amount of words">
+        <div class="list">
+        </div>
+
+        <p id="test"></p>
+
+        <button id="start_Game" onclick="nextPage()"> next to play Game</button>
+        <button id="clear" onclick="clearVocab()">clear</button>
+    </div>
+
+    <script>
+
+        let ArrayWords = JSON.parse(localStorage.getItem("ArrayWords")) || ["cat"];
+
+        // Initial render on page load
+        render();
+
+        function render() {
+            const listContainer = document.getElementsByClassName("list")[0];
+            listContainer.innerHTML = "";
+
+            ArrayWords.forEach((word, index) => {
+                let newDiv = document.createElement("div");
+                newDiv.className = "vocab_in_list";
+                newDiv.innerHTML = `<p>${word}</p><img src="delete_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" alt="bin" onclick="deleteVocab(${index})" style="cursor:pointer;">`;
+                listContainer.appendChild(newDiv);
+            });
+
+            const startBtn = document.getElementById("start_Game");
+            const inputElem = document.getElementById("input");
+
+            if (ArrayWords.length >= 3) {
+                startBtn.style.visibility = "visible";
+            } else {
+                startBtn.style.visibility = "hidden";
+            }
+
+            if (ArrayWords.length >= 5) {
+                inputElem.disabled = true;
+            } else {
+                inputElem.disabled = false;
+            }
+        }
+
+        function addVocab(event) {
+            if (event.key !== "Enter")
+                return;
+
+            let inputElem = document.getElementById("input");
+            let valueInput = inputElem.value.trim();
+
+            if (valueInput === "")
+                return;
+
+            if (ArrayWords.length >= 5)
+                return;
+
+            ArrayWords.push(valueInput);
+            localStorage.setItem("ArrayWords", JSON.stringify(ArrayWords));
+            inputElem.value = "";
+
+            render();
+        }
+
+        function deleteVocab(index) {
+            ArrayWords.splice(index, 1);
+            localStorage.setItem("ArrayWords", JSON.stringify(ArrayWords));
+            render();
+        }
+
+        function nextPage() {
+            localStorage.setItem("ArrayWords", JSON.stringify(ArrayWords));
+            // window.location.href = "gameVocab2.htm";
+            window.location.href = "game.htm";
+            //  window.location.href = "gamm.htm";
+        }
+
+        function clearVocab() {
+            ArrayWords = [];
+            localStorage.removeItem("ArrayWords");
+            render();
+        }
+    </script>
+
+
+</body>
+
+</html>

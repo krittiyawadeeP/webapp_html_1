@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Game</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 500px;
+            text-align: center;
+        }
+
+        #letters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .letter {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            cursor: grab;
+            font-size: 25px;
+        }
+
+        #answer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .slot {
+            width: 50px;
+            height: 50px;
+            border: 2px dashed gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vocabulary Game</h1>
+
+        <p>Round: <span id="round">1</span> / 5</p>
+
+        <p>Time: <span id="time">5</span></p>
+
+        <p>Score: <span id="score">0</span></p>
+
+        <h2 id="word"></h2>
+
+        <div id="letters"></div>
+
+        <div id="answer"></div>
+
+        <br>
+
+        <button onclick="resetGame()">Reset</button>
+
+    </div>
+
+
+    <script>
+
+        // รับ ArrayWords จากไฟล์แรก
+        let ArrayWords =
+            JSON.parse(localStorage.getItem("ArrayWords")) || [];
+
+
+        let currentWord = "";
+
+        let score = 0;
+
+        let round = 0;
+
+        let time = 5;
+
+        let timer;
+
+
+        // -------------------------
+        // เริ่มเกม
+        // -------------------------
+
+        startGame();
+
+
+        function startGame() {
+
+            round++;
+
+            if (round > 5) {
+
+                alert("Game Over!");
+
+                return;
+            }
+
+
+            document.getElementById("round").innerText =
+                round;
+
+
+            // สุ่มคำศัพท์จาก ArrayWords
+            let randomIndex =
+                Math.floor(Math.random() * ArrayWords.length);
+
+
+            currentWord =
+                ArrayWords[randomIndex];
+
+
+            // แสดงคำศัพท์
+            document.getElementById("word").innerText =
+                currentWord;
+
+
+            createLetters();
+
+            createAnswer();
+
+            startTimer();
+        }
+
+
+        // -------------------------
+        // สร้างตัวอักษร
+        // -------------------------
+
+        function createLetters() {
+
+            let letters =
+                document.getElementById("letters");
+
+
+            letters.innerHTML = "";
+
+
+            // แยกคำเป็นตัวอักษร
+            let wordArray =
+                currentWord.split("");
+
+
+            // สุ่มตัวอักษร
+            wordArray.sort(
+                () => Math.random() - 0.5
+            );
+
+
+            wordArray.forEach(function(letter, index) {
+
+                let newLetter =
+                    document.createElement("div");
+
+
+                newLetter.className = "letter";
+
+
+                newLetter.innerText =
+                    letter;
+
+
+                newLetter.id =
+                    "letter" + index;
+
+
+                newLetter.draggable = true;
+
+
+                // Drag & Drop
+                newLetter.ondragstart =
+                    dragstartHandler;
+
+
+                letters.appendChild(newLetter);
+            });
+        }
+
+
+        // -------------------------
+        // สร้างช่องคำตอบ
+        // -------------------------
+
+        function createAnswer() {
+
+            let answer =
+                document.getElementById("answer");
+
+
+            answer.innerHTML = "";
+
+
+            for (let i = 0; i < currentWord.length; i++) {
+
+                let slot =
+                    document.createElement("div");
+
+
+                slot.className = "slot";
+
+
+                slot.ondrop =
+                    dropHandler;
+
+
+                slot.ondragover =
+                    dragoverHandler;
+
+
+                answer.appendChild(slot);
+            }
+        }
+
+
+        // -------------------------
+        // Drag Start
+        // -------------------------
+
+        function dragstartHandler(ev) {
+
+            ev.dataTransfer.setData(
+                "text",
+                ev.target.id
+            );
+        }
+
+
+        // -------------------------
+        // Drag Over
+        // -------------------------
+
+        function dragoverHandler(ev) {
+
+            ev.preventDefault();
+        }
+
+
+        // -------------------------
+        // Drop
+        // -------------------------
+
+        function dropHandler(ev) {
+
+            ev.preventDefault();
+
+
+            const data =
+                ev.dataTransfer.getData("text");
+
+
+            let letter =
+                document.getElementById(data);
+
+
+            // ใส่ตัวอักษรลงช่อง
+            ev.target.appendChild(letter);
+
+
+            checkAnswer();
+        }
+
+
+        // -------------------------
+        // ตรวจคำตอบ
+        // -------------------------
+
+        function checkAnswer() {
+
+            let slots =
+                document.getElementById("answer").children;
+
+
+            let answer = "";
+
+
+            for (let slot of slots) {
+
+                // ถ้ายังมีช่องว่าง
+                if (slot.children.length == 0) {
+
+                    return;
+                }
+
+
+                answer +=
+                    slot.children[0].innerText;
+            }
+
+
+            // ตรวจว่าถูกหรือไม่
+            if (answer == currentWord) {
+
+                score++;
+
+
+                document.getElementById("score").innerText =
+                    score;
+
+
+                clearInterval(timer);
+
+
+                setTimeout(function() {
+
+                    startGame();
+
+                }, 500);
+            }
+        }
+
+
+        // -------------------------
+        // Timer
+        // -------------------------
+
+        function startTimer() {
+
+            clearInterval(timer);
+
+
+            time = 5;
+
+
+            document.getElementById("time").innerText =
+                time;
+
+
+            timer = setInterval(function() {
+
+                time--;
+
+
+                document.getElementById("time").innerText =
+                    time;
+
+
+                if (time <= 0) {
+
+                    clearInterval(timer);
+
+
+                    alert("Time out!");
+
+
+                    startGame();
+                }
+
+            }, 1000);
+        }
+
+
+        // -------------------------
+        // Reset
+        // -------------------------
+
+        function resetGame() {
+
+            clearInterval(timer);
+
+
+            score = 0;
+
+            round = 0;
+
+
+            document.getElementById("score").innerText =
+                score;
+
+
+            startGame();
+        }
+
+    </script>
+
+</body>
+
+</html>

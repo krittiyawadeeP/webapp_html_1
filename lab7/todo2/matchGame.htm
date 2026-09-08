@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #gamepage {
+            display: grid;
+            grid-template-columns: repeat(4, 80px);
+            gap: 10px;
+        }
+
+        .card {
+            width: 80px;
+            height: 80px;
+            background-color: lightgreen;
+            font-size: 40px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .card.matched {
+            background-color: white;
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>let play game</h1>
+    <div id="gamepage"></div>
+
+    <button onclick="resetGame()">reset</button>
+
+    <script>
+        let firstCard = null;
+        let secondCard = null;
+        let lockBoard = false;
+        let fruits =
+            [
+                "🍇", "🍇",
+                "🍎", "🍎",
+                "🍍", "🍍",
+                "🍊", "🍊",
+                "🍉", "🍉",
+                "🍌", "🍌",
+                "🥝", "🥝",
+                "🍓", "🍓"
+
+            ];
+
+        startGame();
+
+
+        function startGame() {
+            let gamepage = document.getElementById("gamepage");
+            gamepage.innerHTML = "";
+
+            fruits.sort(() => Math.random() - 0.5);
+
+            fruits.forEach((fruit, index) => {
+                let card = document.createElement("button");
+                card.className = "card";
+                card.textContent = "?";
+                card.dataset.fruit = fruit;
+
+                card.addEventListener("click", () => {
+                    openCard(card);
+                })
+
+                gamepage.appendChild(card);
+            });
+
+
+        }
+
+        function openCard(card) {
+
+            if (lockBoard) return;
+
+            // ป้องกันกดใบเดิมซ้ำ
+            if (card === firstCard) return;
+
+            // ถ้าจับคู่ไปแล้ว
+            if (card.classList.contains("matched")) return;
+
+            card.textContent = card.dataset.fruit;
+
+            if (firstCard === null) {
+
+                // ใบแรก
+                firstCard = card;
+
+            } else {
+
+                // ใบที่สอง
+                secondCard = card;
+
+                checkMatch();
+            }
+        }
+
+
+        function checkMatch() {
+
+            if (firstCard.dataset.fruit === secondCard.dataset.fruit) {
+
+                // ตรงกัน
+                firstCard.classList.add("matched");
+                secondCard.classList.add("matched");
+
+                resetTurn();
+
+            } else {
+
+                // ไม่ตรงกัน รอ 2 วินาที
+                lockBoard = true;
+
+                setTimeout(() => {
+
+                    firstCard.textContent = "?";
+                    secondCard.textContent = "?";
+
+                    resetTurn();
+
+                }, 2000);
+            }
+        }
+
+        function resetGame() {
+
+            firstCard = null;
+            secondCard = null;
+            lockBoard = false;
+
+            startGame();
+        }
+
+        function resetTurn() {
+
+            firstCard = null;
+            secondCard = null;
+            lockBoard = false;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #emtyBox {
+        display: flex;
+        flex-direction: row;
+        gap: 20PX;
+        margin: 10px;
+
+
+    }
+
+
+    .emtyBox div {
+        padding: 20px;
+        background-color: aqua;
+
+
+    }
+
+    .chars {
+        padding: 20px;
+        background-color: blanchedalmond;
+
+    }
+
+    #chars {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+    }
+
+    .slot {
+        width: 50px;
+        height: 50px;
+        border: 2px dashed gray;
+
+        overflow: hidden;
+
+    }
+</style>
+
+<body>
+    <h1>Vocabulary Game</h1>
+    <h2 id="werning"></h2>
+    <p>time : <span id="time">5</span></p>
+    <p>score : <span id="score">0</span></p>
+    <p>round : <span id="round">1</span></p>
+    <p>word : <span id="word"> </span></p>
+    <div id="emtyBox">
+        <!-- <div ondragover="drangOverHandler(event)" ondrop="dropHandler(event)">a</div>
+        <div>a</div>
+        <div>a</div> -->
+    </div>
+
+    <div id="chars">
+        <!-- <button id="a" draggable="true" ondragstart="drangStartHandler(event)">..</button>
+        <button>..</button>
+        <button>..</button> -->
+    </div>
+
+    <button>resetGame</button>
+
+
+    <script>
+
+
+        let ArrayWords = JSON.parse(localStorage.getItem("ArrayWords")) || [];
+        let round = 0;
+        let remainingWord = []; //to check if the word have takken
+        let time = 5;
+        let currentWord = "";
+        let score = 0;
+        let timer;
+
+        if (ArrayWords.length == 0) {
+            alert("no vocab found");
+            window.location.href = "gameVocab1.htm";
+        }
+
+
+        startGame();
+
+
+
+        function startGame() {
+            round++;
+            if (round > 5) {
+                alert("game over");
+                alert("you have got " + score + " points");
+                return;
+            }
+
+            document.getElementById("round").innerText = round;
+
+
+
+            if (remainingWord.length == 0) {
+                remainingWord = [...ArrayWords];
+                //coppy
+            }
+
+            for (let i = 0; i < 5; i++) {
+                console.log(remainingWord[i]);
+                //check
+            }
+
+            let randomIndex = Math.floor(Math.random() * remainingWord.length);
+            currentWord = remainingWord[randomIndex];
+
+            remainingWord.splice(randomIndex, 1);
+            document.getElementById("word").innerText = currentWord;
+
+            console.log(currentWord);
+            creatLetters();
+            creatAnswer();
+            startTime();
+        }
+
+
+
+
+        function startTime() {
+            clearInterval(timer);
+            time =5;
+            document.getElementById("time").innerText = time;
+
+            timer = setInterval(function () {
+
+                time--;
+
+                document.getElementById("time")
+                    .innerText = time;
+
+                if (time <= 0) {
+                    clearInterval(timer);
+                    alert("Time out!");
+                    startGame();
+                }
+            }, 1000);
+        }
+
+        function creatLetters() {
+            let letters = document.getElementById("chars");
+            letters.innerHTML = "";
+
+            let charArray = currentWord.split("");
+
+            charArray.sort(() => Math.random() - 0.5);
+
+            console.log("new sort = " + charArray);
+
+            //creat html
+            charArray.forEach
+                (function (char, index) {
+                    let newLetter = document.createElement("div");
+                    newLetter.className = "chars";
+                    newLetter.innerText = char;
+                    newLetter.id = "char" + index;
+                    newLetter.draggable = true;
+                    newLetter.ondragstart = drangStartHandler;
+                    letters.appendChild(newLetter);
+
+                });
+        }
+
+        function creatAnswer() {
+            let emtyBox = document.getElementById("emtyBox");
+            emtyBox.innerHTML = "";
+
+            for (let i = 0; i < currentWord.length; i++) {
+                let slot = document.createElement("div");
+                slot.className = "slot";
+                slot.ondrop = dropHandler;
+                slot.ondragover = drangOverHandler;
+                emtyBox.appendChild(slot);
+            }
+        }
+
+
+        function drangStartHandler(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+            //การทำงาน: เมื่อเราเริ่มคลิกค้างแล้วลากปุ่ม (หรือวัตถุใดๆ) 
+            //ฟังก์ชันจะใช้ ev.dataTransfer.setData() 
+            // เพื่อแอบบันทึกข้อมูลเก็บไว้ ในที่นี้คือการเก็บข้อมูลประเภท "text" 
+            // ซึ่งค่าที่เก็บก็คือ id ของวัตถุชิ้นนั้น (เพื่อให้รู้ว่าเรากำลังลากชิ้นไหนอยู่)
+        }
+
+        function drangOverHandler(ev) {
+            ev.preventDefault();
+        }
+
+        function dropHandler(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");// ไปดึง id ที่บันทึกไว้ในขั้นตอนแรกออกมา
+            ev.target.appendChild(document.getElementById(data));// ย้ายวัตถุมาใส่ในกล่องใหม่
+
+            checkAnswer();
+        }
+
+        function checkAnswer() {
+
+            let slots = document.getElementById("emtyBox").children;
+            let answer = "";
+
+            for (let slot of slots) {
+                if (slot.children.length == 0)
+                    return;
+
+                answer += slot.children[0].innerText;
+            }
+
+            if (answer == currentWord)
+                score++;
+
+            document.getElementById("score").innerText = score;
+            clearInterval(timer);
+
+            setTimeout(function () {
+                startGame();
+            }, 500);
+        }
+
+
+
+    </script>
+</body>
+
+</html>
