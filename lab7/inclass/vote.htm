@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: monospace;
+        }
+
+        #a,#b,#c{
+        font-size: 55px; /* ปรับเพิ่ม/ลดขนาดความใหญ่ตรงนี้ได้ */
+        line-height: 1;
+    
+        }
+    </style>
 </head>
 <body>
     <h1>vote the favorit</h1>
         <div>
-            <button id="a" onclick="vote('burger')">hamberger</button>
-            <button id="b"onclick="vote('pizza')">pizza</button>
-            <button id="c"onclick="vote('hotdog')">hotdog</button>
+            <button id="a" onclick="vote('burger')"> 🍔 </button>
+            <button id="b"onclick="vote('pizza')">🍕 </button>
+            <button id="c"onclick="vote('hotdog')"> 🌭 </button>
         </div>
 
         <button id="showBtn" onclick="showVote()">show vote</button>
