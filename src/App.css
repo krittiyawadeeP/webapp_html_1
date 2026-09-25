@@ -1,0 +1,55 @@
+.container {
+  width: 700px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #4db3ca;
+  font-size: 48px;
+}
+
+section {
+  padding: 20px 0;
+}
+
+button {
+  padding: 8px 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.red-btn {
+  background: red;
+  color: black;
+}
+
+.blue-btn {
+  background: blue;
+  color: white;
+}
+
+.arrow {
+  font-size: 40px;
+  color: #4db3ca;
+  margin: 0 20px;
+}
+
+p {
+  font-size: 20px;
+}
+
+input[type="text"] {
+  width: 180px;
+  padding: 8px;
+}
+
+input[type="color"] {
+  width: 60px;
+  height: 35px;
+  margin-left: 5px;
+}
+
+hr {
+  margin: 20px 0;
+}
