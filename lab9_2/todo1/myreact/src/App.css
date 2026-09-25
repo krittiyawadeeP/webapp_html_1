@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.parent{
+  padding: 30px;
+}
+.RedButton , .blueButton{
+padding: 20px;
+color: aliceblue;
+}
+.blueButton{
+  background-color: blue;
+}
+
+.RedButton{
+  background-color: red;
+}
