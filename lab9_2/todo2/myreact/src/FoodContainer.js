@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FoodForm from "./FoodForm";
 import FoodList from "./FoodList";
+import './container.css';
 
 // กำหนดทุกอย่างก่อน export ก็ได้มั้ง
 const FoodContainer = () => {
@@ -22,14 +23,15 @@ const FoodContainer = () => {
     };
 
     return (
-        <div>
+        <div className="container">
             <h1>our menu</h1>
             {/* food.filter(...): เป็นการวนลูปเพื่อกรองข้อมูลในอาร์เรย์ food โดยจะสร้างอาร์เรย์ใหม่ขึ้นมา (newFood) ที่มีเฉพาะรายการที่ผ่านเงื่อนไข */}
             <FoodList food={food} del={deleteItem} />
+            <hr style ={{ margin:"10px" }} ></hr>
             <FoodForm addItem={addItem} onAddFood={addItem} />
+            
         </div>
     );
 };
-
 export default FoodContainer;
 export { FoodContainer };
