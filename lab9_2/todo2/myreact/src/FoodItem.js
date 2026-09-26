@@ -1,6 +1,6 @@
 const FoodItem = ({ index, item, del ,isAdmin}) => {
     return (
-        <li>
+        <li className={item.isBestSeller ? "reward" : ""}>
             <p>{item.name} | {item.price}
                 {item.isBestSeller ? "🏆" : ""}
                 { isAdmin && (<button onClick={() => del(index)}>
