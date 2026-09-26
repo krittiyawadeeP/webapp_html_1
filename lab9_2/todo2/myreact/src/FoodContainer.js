@@ -17,6 +17,7 @@ const FoodContainer = () => {
     };
 
     const addItem = (newItem) => {
+        // ...food คือ การแกะกล่องเอาข้อมูลอาหาร"ทุกตัวที่มีอยู่เดิม" ออกมากางไว้ก่อน
         setfood([...food, newItem]);
     };
 

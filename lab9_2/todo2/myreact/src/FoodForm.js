@@ -58,4 +58,4 @@ const FoodForm = ({ onAddFood, addItem }) => {
 };
 
 export default FoodForm;
-export { FoodForm, FoodForm as FoodFrom };
+// export { FoodForm, FoodForm as FoodFrom };

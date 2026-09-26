@@ -14,4 +14,4 @@ const FoodItem = ({ index, item, del }) => {
 };
 
 export default FoodItem;
-export { FoodItem };
+// export { FoodItem };
