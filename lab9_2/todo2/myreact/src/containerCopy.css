@@ -1,0 +1,249 @@
+/* ========================================================
+   Cute & Modern Café Theme for Food App 💗🐰🍦🎀🧁
+   ======================================================== */
+
+/* คอนเทนเนอร์หลักตรงกลางหน้าจอ */
+.container {
+    max-width: 580px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 35px 25px;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 12px 35px rgba(255, 175, 189, 0.35);
+    border: 2px solid #ffe3ec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
+    box-sizing: border-box;
+    /* transition: all 0.3s ease; */
+}
+
+/* หัวข้อหลัก Welcome */
+.container h1 {
+    /* font-size: 24px; */
+    color: #ff80cc;
+    text-align: center;
+    /* margin: 0 0 20px 0; */
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.3);
+    font-weight: 700;
+}
+
+/* หัวข้อย่อย our menu */
+.container h2 {
+    /* font-size: 20px; */
+    color: #070203;
+    margin: 15px 0 12px 0;
+    text-align: center;
+    /* font-weight: 700; */
+}
+
+/* แถบสลับโหมด Admin / User Mode */
+.mode {
+    width: 88%;
+    background: linear-gradient(135deg, #000000, #ff80cc);
+    border: 1.5px solid #ffccd5;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.25);
+    box-sizing: border-box;
+}
+
+.mode h2 {
+    margin: 0;
+    font-size: 15px;
+    color: rgb(255, 217, 242);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ปุ่มสลับโหมด */
+.mode button {
+    background: black;
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(255, 117, 140, 0.4);
+    transition: all 0.2s ease-in-out;
+}
+
+.mode button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(255, 117, 140, 0.55);
+}
+
+.mode button:active {
+    transform: scale(0.96);
+}
+
+/* รายการเมนูอาหาร (FoodList) */
+.container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* การ์ดแต่ละเมนู (FoodItem) */
+.container li {
+    background: #ff80cc;
+    border: 1.5px solid #ffe3ec;
+    border-radius: 16px;
+    padding: 14px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.container li:hover {
+    transform: translateY(-2px);
+    border-color: #ffccd5;
+    box-shadow: 0 6px 18px rgba(255, 182, 193, 0.3);
+}
+
+.container li p {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* ปุ่มลบเมนูอาหาร */
+.container li button {
+    background: #020101;
+    color: #ffffff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    box-shadow: 0 2px 6px rgba(255, 82, 119, 0.3);
+    transition: all 0.2s ease;
+}
+
+.container li button:hover {
+    background: #ff008c;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* เส้นคั่นกลาง */
+.container hr {
+    border: none;
+    height: 1.5px;
+    background: #ffccd5;
+    width: 88%;
+    margin: 25px 0;
+}
+
+/* ฟอร์มเพิ่มเมนูอาหารใหม่ (FoodForm) */
+form {
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(145deg, #fff7f9, #fbfaff);
+    border: 2px dotted #ff9ae4;
+    border-radius: 22px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 20px rgba(255, 182, 193, 0.2);
+    margin-top: 10px;
+}
+
+form h2 {
+    margin: 0 0 12px 0;
+    
+    font-size: 18px;
+    text-align: center;
+}
+
+form p {
+    margin: 8px 0 4px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+}
+
+/* ช่องกรอกข้อความและตัวเลข */
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    border: 1.5px solid #ffd1dc;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+    background: #ffffff;
+    color: #333333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus {
+    border-color: #ff758c;
+    box-shadow: 0 0 0 3px rgba(255, 117, 140, 0.2);
+}
+
+/* กล่องเลือกหมวดหมู่ Best Seller */
+form select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    border: 1.5px solid #ffd1dc;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+    background: #ffffff;
+    color: #555555;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+form select:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 3px rgba(255, 117, 140, 0.2);
+}
+
+/* ปุ่ม Add menu */
+form button[type="submit"] {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    background: #ff80cc;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(255, 117, 140, 0.4);
+    transition: all 0.2s ease-in-out;
+}
+
+form button[type="submit"]:hover {
+    background: linear-gradient(135deg, #000000, #ff6ea6);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 117, 140, 0.5);
+}
+
+form button[type="submit"]:active {
+    transform: scale(0.98);
+}

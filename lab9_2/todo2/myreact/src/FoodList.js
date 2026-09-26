@@ -1,6 +1,6 @@
 import FoodItem from "./FoodItem";
 
-const FoodList = ({ food, del }) => {
+const FoodList = ({ food, del ,isAdmin}) => {
     return (
         <div>
             <ul>
@@ -12,6 +12,7 @@ const FoodList = ({ food, del }) => {
                         key={index}
                         item={eachItem}
                         del={del}
+                        isAdmin = {isAdmin}
                     />
                 ))}
             </ul>

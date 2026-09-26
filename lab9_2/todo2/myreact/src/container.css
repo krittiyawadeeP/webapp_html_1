@@ -1,3 +1,30 @@
-.container{
-    padding: 20px;
+
+.container {
+    /* padding: 20px; */
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 600px;
+    border: solid 1px black;
+
+}
+
+form{
+    border: solid 1px black;
+    background-color: rgb(182, 235, 235);
+    padding: 10px;
+
+}
+
+.mode  {
+    border: solid 1px black;
+    background-color: aqua;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 70%;
 }

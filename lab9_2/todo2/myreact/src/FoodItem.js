@@ -1,11 +1,11 @@
-const FoodItem = ({ index, item, del }) => {
+const FoodItem = ({ index, item, del ,isAdmin}) => {
     return (
         <li>
             <p>{item.name} | {item.price}
                 {item.isBestSeller ? "🏆" : ""}
-                <button onClick={() => del(index)}>
+                { isAdmin && (<button onClick={() => del(index)}>
                     delete
-                </button>
+                </button>)}
             </p>
         </li>
     );

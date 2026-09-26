@@ -1,61 +1,91 @@
 import { useState } from "react";
 
-const FoodForm = ({ onAddFood, addItem }) => {
-    const [name, setName] = useState("");
-    const [price, setPrice] = useState("");
-    const [isBestSeller, setIsBestSeller] = useState(false);
+const FoodForm = ({ addItem, isAdmin }) => {
+    const [inputs, setInputs] = useState({
+        name: "",
+        price: "",
+        isBestSeller: "1"
+    });
 
-    const handleSubmit = (e) => {
+    function handleSubmit(e) {
         e.preventDefault();
-        if (!name.trim() || !price) return;
-        const addFn = onAddFood || addItem;
-        if (addFn) {
-            addFn({
-                name: name.trim(),
-                price: Number(price),
-                isBestSeller: isBestSeller ? 1 : 0
-            });
+
+        // ตรวจสอบว่ากรอกข้อมูลครบถ้วนหรือไม่ก่อนเพิ่ม
+        if (!inputs.name.trim() || !inputs.price) {
+            return;
         }
-        setName("");
-        setPrice("");
-        setIsBestSeller(false);
-    };
+
+        const newFood = {
+            name: inputs.name.trim(),
+            price: Number(inputs.price),
+            isBestSeller: inputs.isBestSeller === "1" ? 1 : 0
+        };
+
+        if (addItem) {
+            addItem(newFood);
+        }
+
+        // เคลียร์ฟอร์มหลังเพิ่มเมนูสำเร็จ
+        setInputs({
+            name: "",
+            price: "",
+            isBestSeller: "1"
+        });
+    }
+
+    function handleChange(e) {
+        const { name, value } = e.target;
+        setInputs((prev) => ({
+            ...prev,
+            [name]: value
+        }));
+    }
 
     return (
-        <form onSubmit={handleSubmit} style={{ marginTop: "20px" }}>
-            <h3>Add Food</h3>
-            <div>
-                <label>Name: </label>
-                <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Food name"
-                />
-            </div>
-            <div style={{ marginTop: "8px" }}>
-                <label>Price: </label>
-                <input
-                    type="number"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                    placeholder="Price"
-                />
-            </div>
-            <div style={{ marginTop: "8px" }}>
-                <label>
+        <div>
+            {isAdmin && (
+                <form onSubmit={handleSubmit}>
+                    <h2>newFood</h2>
+                    <p>name : </p>
                     <input
-                        type="checkbox"
-                        checked={isBestSeller}
-                        onChange={(e) => setIsBestSeller(e.target.checked)}
+                        value={inputs.name}
+                        onChange={handleChange}
+                        type="text"
+                        name="name"
+                        placeholder="Food name"
+                        required
                     />
-                    {" "}Best Seller
-                </label>
-            </div>
-            <button type="submit" style={{ marginTop: "10px" }}>Add</button>
-        </form>
+
+                    <p>price : </p>
+                    {/* แก้ไข tag input ให้เป็น self-closing เพื่อไม่ให้เกิด error ใน React */}
+                    <input
+                        value={inputs.price}
+                        onChange={handleChange}
+                        type="number"
+                        name="price"
+                        placeholder="Price"
+                        required
+                    />
+
+                    <div style={{ marginTop: "10px" }}>
+                        <select
+                            name="isBestSeller"
+                            value={inputs.isBestSeller}
+                            onChange={handleChange}
+                        >
+                            <option value="1">best seller</option>
+                            <option value="0">normal</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" style={{ marginTop: "10px" }}>
+                        Add menu
+                    </button>
+                </form>
+            )}
+        </div>
     );
 };
 
 export default FoodForm;
-// export { FoodForm, FoodForm as FoodFrom };
+export { FoodForm };
