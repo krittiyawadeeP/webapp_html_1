@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button img {
+            height: 70px;
+            width: 80px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>vote the favorite</h1>
+
+    <button><img src="img/images.jpg" alt=""></button>
+    <button><img src="img/pizimages.jpg" alt=""></button>
+    <button><img src="img/images (1).jpg" alt=""></button>
+
+    <div>
+        <p id="ham"></p>
+        <p id="piz"></p>
+        <p id="hot"></p>
+    </div>
+
+    <br>
+    <button onclick="vote()">back to Vote</button>
+    <button onclick="clearScore()">clear</button>
+    <script>
+        // let hamScore = localStorage.getItem("ham") || 0;
+        // let pizScore = localStorage.getItem("piz") || 0;
+        // let hotScore = localStorage.getItem("hot") || 0;
+
+        showScore();
+        function showScore() {
+
+        let hamScore = localStorage.getItem("ham") || 0;
+        let pizScore = localStorage.getItem("piz") || 0;
+        let hotScore = localStorage.getItem("hot") || 0;
+        
+            document.getElementById("ham").innerText = hamScore;
+            document.getElementById("piz").innerText = pizScore;
+            document.getElementById("hot").innerText = hotScore;
+        }
+
+        function vote() {
+            window.location.href = "vote.htm";
+        }
+
+        function clearScore() {
+            localStorage.setItem("ham", 0);
+            localStorage.setItem("hot", 0);
+            localStorage.setItem("piz", 0);
+            showScore();
+        }
+    </script>
+
+
+
+</body>
+
+</html>

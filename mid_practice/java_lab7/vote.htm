@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button img {
+            height: 70px;
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>vote the favorite</h1>
+
+    <button onclick="vote('ham')"><img src="img/images.jpg" alt=""></button>
+    <button onclick="vote('piz')"><img src="img/pizimages.jpg" alt=""></button>
+    <button onclick="vote('hot')"><img src="img/images (1).jpg" alt=""></button>
+
+    <br>
+    <button onclick="showVote()">show Vote</button>
+    
+
+    <script>
+        let hamScore = Number(localStorage.getItem("ham"))|| 0;
+        let pizScore = localStorage.getItem("piz") || 0;
+        let hotScore = localStorage.getItem("hot");
+        console.log(hamScore);
+
+        function vote(food) {
+            if (food == "ham") {
+                hamScore++;
+                localStorage.setItem("ham",hamScore);
+                console.log(hamScore);
+            }
+            else if(food == "piz"){
+                pizScore++;
+                localStorage.setItem("piz", pizScore);
+                console.log("piz" + pizScore);
+
+            }
+            else
+            {
+                hotScore++;
+                localStorage.setItem("hot",hotScore);
+
+
+            }
+        }
+
+       
+
+        function showVote() {
+            window.location.href = "showVote.htm"
+        }
+    </script>
+</body>
+
+</html>

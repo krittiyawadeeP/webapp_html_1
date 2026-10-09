@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>click me before 5 secound</p>
+    <h1>time : <span id="count">5</span></h1>
+    <button id="stop">click me</button>
+    <button id="restart" style="visibility: hidden;" onclick="reGame()">try again</button>
+
+    <script>
+        let btnStop = document.getElementById("stop");
+        let outPutText = document.getElementById("count");
+        let c = 5;
+
+        btnStop.addEventListener("click", stopBobFuc);
+
+
+        let timer = setInterval(countDown, 1000);
+
+        function reGame(){
+            clearInterval(timer);
+            c = 5;
+            outPutText.innerText = "5";
+            timer = setInterval(countDown, 1000);
+            btnStop.style.visibility ="visible";
+            document.getElementById("restart").style.visibility="hidden";
+        }
+        function countDown() {
+            if (c > 0) {
+                c--;
+                outPutText.innerText = c;
+            }
+
+            else {
+                clearInterval(timer);
+                outPutText.innerText = "time out boooooom"
+                btnStop.style.visibility = "hidden";
+                document.getElementById("restart").style.visibility="visible";
+            }
+        }
+
+        function stopBobFuc() {
+            if (c > 0) {
+                clearInterval(timer);
+                outPutText.innerText = "you save here";
+                btnStop.style.visibility = "hidden";
+            }
+        }
+    </script>
+</body>
+
+</html>

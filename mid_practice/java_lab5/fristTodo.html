@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h3>todo 1 chang color</h3>
+        <button id="colorbtn" onclick="changColor()" style="background-color: blue;">
+            go red
+        </button>
+    </div>
+    <hr>
+
+    <div>
+        <h3>todo 2 chang color and text</h3>
+        <p id="outPutText">hello</p>
+        <input type="text" value="hello" id="inText">
+        <input type="color" value="pink" id="inColor">
+        <button onclick="showResult()">click</button>
+    </div>
+
+    <script>
+        function changColor() {
+            let nowBtnText = document.getElementById("colorbtn");
+
+            if (nowBtnText.innerText === "go red") {
+                nowBtnText.style.backgroundColor = "red";
+                nowBtnText.innerText = "go blue";
+            }
+            else
+            {
+                nowBtnText.style.backgroundColor = "blue";
+                nowBtnText.innerText ="go red"
+            }
+        }
+
+        // to do 2
+        function showResult(){
+            let textIn = document.getElementById("inText");
+            let colorIn = document.getElementById("inColor");
+
+            document.getElementById("outPutText").innerText = textIn.value;
+            document.getElementById("outPutText").style.color = colorIn.value;
+        }
+
+        //todo3
+        
+    </script>
+
+
+</body>
+
+</html>

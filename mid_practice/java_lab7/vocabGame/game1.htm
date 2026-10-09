@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="con">
+        <input id="input" type="text" placeholder="input maja" onkeydown="addVocab(event)">
+        <div id="vocabList">
+
+        </div>
+        <div>
+
+            <button onclick="clera()">clear</button>
+            <button style="visibility: hidden;" onclick="next()">startGame</button>
+        </div>
+
+
+    </div>
+
+    <script>
+        let arrayWord = JSON.parse(localStorage.getItem(("wordstore"))) || ["cat"];
+
+        render();
+        function next() {
+            window.location.href = "game2.htm";
+        }
+
+        function render() {
+
+            const listVocab = document.getElementById("vocabList");
+            listVocab.innerHTML="";
+            
+            arrayWord.forEach((eachWord, index) => {
+                let newDiv = document.createElement("div");
+                newDiv.className = "eachWord";
+                newDiv.innerHTML = `<p>${eachWord}</p><button button > d</button >`;
+                listVocab.appendChild(newDiv);
+            });
+
+        }
+
+        function addVocab(event) {
+            if (event.key !== "Enter")
+                return;
+
+            let inputE = document.getElementById("input");
+            let word = inputE.value.trim();
+
+            if (word == "")
+                return;
+
+            arrayWord.push(word);
+            localStorage.setItem("wordstore", JSON.stringify(arrayWord));
+            inputE.value = "";
+
+            render();
+
+            // if(event.)
+
+        }
+
+        function clera(){
+            arrayWord=[];
+            localStorage.removeItem("arrayWord");
+            render();
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

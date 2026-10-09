@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>vocab game start</h1>
+    <h2>vocab want: <span id="answer"></span></h2>
+    <h2>time left <span id="time">5</span></h2>
+    <div class="emtyBox">
+
+    </div>
+
+    <div class="quastVocab">
+
+    </div>
+
+    <script>
+        let timeCount =5;
+        let round =0;
+        // let timmer = setInterval(countTime,1000);
+        let arrayWord = JSON.parse (localStorage.getItem("wordstore")) || [];
+        let coopyArray
+
+        function start_Game(){
+            round++; 
+            if(coopyArray.length == 0)
+            coopyArray = [...arrayWord];
+
+        }
+    </script>
+    
+</body>
+</html>
