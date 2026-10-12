@@ -3,6 +3,25 @@ const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
+
+//my try
+exports.getMenuBest = async (req, res) => {
+  try {
+    const menus = await prisma.menu.findMany({
+      where: {
+        isBestSeller : true,
+      },
+      include: {
+        type: true,
+      },
+    });
+
+    res.json(menus);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 exports.getMenus = async (req, res) => {
   try {
     const menus = await prisma.menu.findMany({

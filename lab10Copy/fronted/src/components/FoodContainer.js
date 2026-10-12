@@ -13,6 +13,7 @@ const FoodContainer = () => {
 
     const [food, setfood] = useState(foods);
     const [isAdmin, chacgeAdmin] = useState(localStorage.getItem("mode") === "admin")
+    // const [price, setPrice] = useState([]);
 
     const changMode = () => {
         const newsatus = !isAdmin
@@ -44,7 +45,7 @@ const FoodContainer = () => {
             {/* food.filter(...): เป็นการวนลูปเพื่อกรองข้อมูลในอาร์เรย์ food โดยจะสร้างอาร์เรย์ใหม่ขึ้นมา (newFood) ที่มีเฉพาะรายการที่ผ่านเงื่อนไข */}
 
 
-            <FoodList food={food} del={deleteItem} isAdmin={isAdmin} />
+            <FoodList food={food} del={deleteItem} isAdmin={isAdmin}/>
             <hr style={{ margin: "10px" }} ></hr>
             {/* <FoodForm addItem={addItem} onAddFood={addItem} isAdmin={isAdmin} /> */}
             <FoodForm addItem={addItem} isAdmin={isAdmin} />
