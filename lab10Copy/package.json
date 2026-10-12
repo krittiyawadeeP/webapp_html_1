@@ -1,6 +1,13 @@
 {
+  "name": "my-app-root",
+  "version": "1.0.0",
+  "scripts": {
+    "backend": "nodemon backend/server.js",
+    "frontend": "set PORT=3001 && npm start --prefix fronted",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
   "devDependencies": {
+    "concurrently": "^10.0.6",
     "nodemon": "^3.1.14"
   }
-  
 }

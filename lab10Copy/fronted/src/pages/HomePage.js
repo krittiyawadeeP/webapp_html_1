@@ -12,7 +12,6 @@ function HomePage() {
   async function loadListMenuBest() {
     const response = await axios.get(`${API_URL}/best`);
     setFood(response.data);
-
   }
 
   useEffect(() => {
@@ -54,7 +53,7 @@ function HomePage() {
           <Link to={"/menu"}>
             <img src="/img/view4.jpg" alt="วิวิ 4" height="200"></img>
           </Link>
-          
+
           <Link to={"/menu"}>
             <img src="/img/egg.jpg" alt="อาหาร 1" height="200"></img>
           </Link>
