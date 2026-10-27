@@ -10,5 +10,5 @@ npx nodemon app.js
 npx prisma init
 npm install prisma @6prisma/client
 
-run
+# run
 npx nodemon app.js

@@ -18,6 +18,11 @@ npm creat vite@latest
 cd franted
 npm install -y
 
+
+<fเพิ่มเกี่ยวกับ path มั้ง>
+npm install axios react-router-dom
+npm run dev
+
 ## พวก rounter ใน fronte ดูสไลด์5 lab11
 
 ## note
@@ -30,3 +35,9 @@ npm install -y
   <StrictMode>
     <App />
   </StrictMode>, คือไร , .jsx คือไร มีอะไรที่ต้องีู้ก่อนทำไหม เรารู้จักแค่ html css js
+
+  # flow ภาพรวม
+  1. back คร่าวๆ packgage บราๆ
+  2. front ลง npm vite
+  3. สร้าง floder pages มีอะไรบ้าง rounte คร่าวๆ
+  4. ลง prisma backend(ยัง)
