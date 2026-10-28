@@ -1,0 +1,20 @@
+
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend_service
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+    restart: always
+
+  frontend:
+    build: ./fronted
+    container_name: frontend_service
+    ports:
+      - "81:80"
+    depends_on:
+      - backend
+    restart: always

@@ -1,3 +1,6 @@
+#### back
+
+
 #### front 
 cd D:\webappp\lab12
 npx create-react-app frontend
@@ -41,3 +44,5 @@ npm run dev
   2. front ลง npm vite
   3. สร้าง floder pages มีอะไรบ้าง rounte คร่าวๆ
   4. ลง prisma backend(ยัง)
+  5. แก้ไฟล์ prisma ตาม slide full stack 1
+  6. เชื่อม db แล้วทดสอบ code พิมตาม แต่มีแก้ ตรง prismaclient
